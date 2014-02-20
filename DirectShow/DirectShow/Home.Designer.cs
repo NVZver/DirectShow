@@ -1,6 +1,6 @@
 ﻿namespace DirectShow
 {
-    partial class Form1
+    partial class Home
     {
         /// <summary>
         /// Требуется переменная конструктора.
