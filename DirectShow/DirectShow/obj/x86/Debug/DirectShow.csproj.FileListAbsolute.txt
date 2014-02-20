@@ -1,0 +1,9 @@
+C:\Users\zvere143\1.MyWork\DirectShow\DirectShow\DirectShow\obj\x86\Debug\DirectShow.csprojResolveAssemblyReference.cache
+C:\Users\zvere143\1.MyWork\DirectShow\DirectShow\DirectShow\obj\x86\Debug\DirectShow.Home.resources
+C:\Users\zvere143\1.MyWork\DirectShow\DirectShow\DirectShow\obj\x86\Debug\DirectShow.Properties.Resources.resources
+C:\Users\zvere143\1.MyWork\DirectShow\DirectShow\DirectShow\obj\x86\Debug\DirectShow.csproj.GenerateResource.Cache
+C:\Users\zvere143\1.MyWork\DirectShow\DirectShow\DirectShow\bin\Debug\DirectShow.exe
+C:\Users\zvere143\1.MyWork\DirectShow\DirectShow\DirectShow\bin\Debug\DirectShow.pdb
+C:\Users\zvere143\1.MyWork\DirectShow\DirectShow\DirectShow\bin\Debug\DirectShowLib-2005.dll
+C:\Users\zvere143\1.MyWork\DirectShow\DirectShow\DirectShow\obj\x86\Debug\DirectShow.exe
+C:\Users\zvere143\1.MyWork\DirectShow\DirectShow\DirectShow\obj\x86\Debug\DirectShow.pdb
