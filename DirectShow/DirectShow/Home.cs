@@ -21,9 +21,11 @@ namespace DirectShow
             hSBMedia.Visible = false;
             vSBMedia.Visible = false;
         }
-        OpenFileDialog openFileDialog = new OpenFileDialog();
+       
+        
         Media mMedia = new Media();
-
+        OpenFileDialog openFileDialog = new OpenFileDialog();   
+            //Open...(LoadFile)
         private void tsmItemOpen_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
@@ -36,11 +38,11 @@ namespace DirectShow
                 tsButtonStop.Enabled  = true;
             }
         }
-            // Open...(LoadFile)
+            //Open...(LoadFile)
         private void tsButtonOpen_Click(object sender, EventArgs e)
         {
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
+            if (DialogResult.OK == openFileDialog.ShowDialog())
+            {   
                 this.Text = openFileDialog.ToString();
                 mMedia.FileLoad(openFileDialog.FileName, this.pnlMedia);
                 tmrMedia.Start();

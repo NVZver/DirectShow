@@ -14,26 +14,33 @@ namespace DirectShow
         public Media()
         {
         }
-
+        //Перечисления
+        public enum mStatus{Empty, Play, Pause, Stop}
+        public mStatus CurrentStatus = mStatus.Empty;
         //Интерфейсы
         private IGraphBuilder  graphBuilder  = null;
         private IMediaControl  mediaControl  = null;
         private IVideoWindow   videoWindow   = null;
         private IMediaPosition mediaPosition = null;
+        private IBasicAudio    basicAudio    = null;
+        private IMediaEvent    mediaEvent    = null;
+        private IMediaEventEx  mediaEventEx  = null;
         //Переменные
-        public double mediaTimeSeconds; //Количество секунд в видео;
-        public int allSeconds; // Количество секунд для таймера;
-
+        private double mediaTimeSeconds; //Количество секунд в видео;
+        private int allSeconds;          // Количество секунд для таймера;
+        
         //Мотод для загрузки видео файла.
         public void FileLoad(string sfile, Panel vPanel)
         {
-            graphBuilder = (IGraphBuilder) new FilterGraph();
-            mediaControl = graphBuilder as IMediaControl;
+            CleanUp();
+            
+            graphBuilder  = (IGraphBuilder) new FilterGraph();
+            mediaControl  = graphBuilder as IMediaControl;
             mediaPosition = graphBuilder as IMediaPosition;
-            videoWindow  = graphBuilder as IVideoWindow;
+            videoWindow   = graphBuilder as IVideoWindow;
+            basicAudio    = graphBuilder as IBasicAudio;
 
             graphBuilder.RenderFile(sfile, null);
-
             videoWindow.put_Owner(vPanel.Handle);
             videoWindow.put_WindowStyle(WindowStyle.Child 
                                       | WindowStyle.ClipSiblings 
@@ -43,10 +50,30 @@ namespace DirectShow
                                           vPanel.ClientRectangle.Width,
                                           vPanel.ClientRectangle.Height);
             
+            mediaControl.Run();
             mediaPosition.get_Duration(out mediaTimeSeconds);
             allSeconds = (int)mediaTimeSeconds;
+        }
 
-            mediaControl.Run();
+        //Метод CleanUp (Зачистка графов)
+        public void CleanUp()
+        {
+            if (mediaControl != null) mediaControl.Stop();
+            CurrentStatus = mStatus.Stop;
+            
+            if (videoWindow != null)
+            {
+                videoWindow.put_Visible(0);
+                videoWindow.put_Owner(new IntPtr(0));
+            }
+            if (mediaControl != null)  mediaControl  = null;
+            if (mediaPosition != null) mediaPosition = null;
+            if (mediaEventEx != null)  mediaEventEx  = null;
+            if (mediaEvent != null)    mediaEvent    = null;
+            if (videoWindow != null)   videoWindow   = null;
+            if (basicAudio != null)    basicAudio    = null;
+            if (graphBuilder != null)  graphBuilder  = null;
+
         }
 
         //Метод расчета и отображения времени видео
@@ -95,6 +122,7 @@ namespace DirectShow
         {
             mediaPosition.put_CurrentPosition(mediaTimeSeconds*trbValue/100);
         }
+
         // Zoom
         public void trbMediaZoom(TrackBar zoomTrackBar, Panel vPanel)
         {
@@ -106,6 +134,7 @@ namespace DirectShow
 
         }
 
+        //Метод для прокрутки увеличенного видео
         public void ScrollMediaZoom(TrackBar zoomTrackBar, HScrollBar hScroll, VScrollBar vScroll, Panel vPanel)
         {
             videoWindow.SetWindowPosition(vPanel.ClientRectangle.Left - hScroll.Value,
