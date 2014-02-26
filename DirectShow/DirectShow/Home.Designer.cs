@@ -46,6 +46,7 @@
             this.vSBMedia = new System.Windows.Forms.VScrollBar();
             this.hSBMedia = new System.Windows.Forms.HScrollBar();
             this.tmrMedia = new System.Windows.Forms.Timer(this.components);
+            this.tsLabelMediaTime1 = new System.Windows.Forms.ToolStripLabel();
             this.mSpHome.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trbScrollMedia)).BeginInit();
@@ -74,14 +75,14 @@
             // tsmItemOpen
             // 
             this.tsmItemOpen.Name = "tsmItemOpen";
-            this.tsmItemOpen.Size = new System.Drawing.Size(152, 22);
+            this.tsmItemOpen.Size = new System.Drawing.Size(112, 22);
             this.tsmItemOpen.Text = "Open...";
             this.tsmItemOpen.Click += new System.EventHandler(this.tsmItemOpen_Click);
             // 
             // tsmItemExit
             // 
             this.tsmItemExit.Name = "tsmItemExit";
-            this.tsmItemExit.Size = new System.Drawing.Size(152, 22);
+            this.tsmItemExit.Size = new System.Drawing.Size(112, 22);
             this.tsmItemExit.Text = "Exit";
             // 
             // toolStrip1
@@ -92,7 +93,8 @@
             this.tsButtonPause,
             this.tsButtonStop,
             this.tsButtonOpen,
-            this.tsLabelMediaTime});
+            this.tsLabelMediaTime,
+            this.tsLabelMediaTime1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(792, 25);
@@ -197,6 +199,12 @@
             this.tmrMedia.Interval = 1000;
             this.tmrMedia.Tick += new System.EventHandler(this.tmrMedia_Tick);
             // 
+            // tsLabelMediaTime1
+            // 
+            this.tsLabelMediaTime1.Name = "tsLabelMediaTime1";
+            this.tsLabelMediaTime1.Size = new System.Drawing.Size(10, 22);
+            this.tsLabelMediaTime1.Text = " ";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,6 +249,7 @@
         private System.Windows.Forms.VScrollBar vSBMedia;
         private System.Windows.Forms.HScrollBar hSBMedia;
         private System.Windows.Forms.Timer tmrMedia;
+        private System.Windows.Forms.ToolStripLabel tsLabelMediaTime1;
     }
 }
 

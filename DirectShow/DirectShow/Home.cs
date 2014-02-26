@@ -76,7 +76,7 @@ namespace DirectShow
         private void tmrMedia_Tick(object sender, EventArgs e)
         {
            mMedia.trbMediaPosition(this.trbScrollMedia);
-           mMedia.TimeManager(this.tsLabelMediaTime, tmrMedia);
+           mMedia.TimeManager(this.tsLabelMediaTime, this.tsLabelMediaTime1, tmrMedia);
         }
             //Полоса прокрутки видео
         private void trbScrollMedia_Scroll(object sender, EventArgs e)
