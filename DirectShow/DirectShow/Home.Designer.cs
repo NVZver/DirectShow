@@ -40,13 +40,14 @@
             this.tsButtonStop = new System.Windows.Forms.ToolStripButton();
             this.tsButtonOpen = new System.Windows.Forms.ToolStripButton();
             this.tsLabelMediaTime = new System.Windows.Forms.ToolStripLabel();
+            this.tsLabelMediaTime1 = new System.Windows.Forms.ToolStripLabel();
             this.pnlMedia = new System.Windows.Forms.Panel();
             this.trbScrollMedia = new System.Windows.Forms.TrackBar();
             this.trbZoomMedia = new System.Windows.Forms.TrackBar();
             this.vSBMedia = new System.Windows.Forms.VScrollBar();
             this.hSBMedia = new System.Windows.Forms.HScrollBar();
             this.tmrMedia = new System.Windows.Forms.Timer(this.components);
-            this.tsLabelMediaTime1 = new System.Windows.Forms.ToolStripLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.mSpHome.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trbScrollMedia)).BeginInit();
@@ -59,7 +60,7 @@
             this.tsmFile});
             this.mSpHome.Location = new System.Drawing.Point(0, 0);
             this.mSpHome.Name = "mSpHome";
-            this.mSpHome.Size = new System.Drawing.Size(792, 24);
+            this.mSpHome.Size = new System.Drawing.Size(919, 24);
             this.mSpHome.TabIndex = 0;
             this.mSpHome.Text = "menuStrip1";
             // 
@@ -97,7 +98,7 @@
             this.tsLabelMediaTime1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(792, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(919, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -147,11 +148,17 @@
             this.tsLabelMediaTime.Size = new System.Drawing.Size(10, 22);
             this.tsLabelMediaTime.Text = " ";
             // 
+            // tsLabelMediaTime1
+            // 
+            this.tsLabelMediaTime1.Name = "tsLabelMediaTime1";
+            this.tsLabelMediaTime1.Size = new System.Drawing.Size(10, 22);
+            this.tsLabelMediaTime1.Text = " ";
+            // 
             // pnlMedia
             // 
             this.pnlMedia.Location = new System.Drawing.Point(0, 52);
             this.pnlMedia.Name = "pnlMedia";
-            this.pnlMedia.Size = new System.Drawing.Size(772, 385);
+            this.pnlMedia.Size = new System.Drawing.Size(400, 380);
             this.pnlMedia.TabIndex = 2;
             // 
             // trbScrollMedia
@@ -159,7 +166,7 @@
             this.trbScrollMedia.Location = new System.Drawing.Point(0, 531);
             this.trbScrollMedia.Maximum = 100;
             this.trbScrollMedia.Name = "trbScrollMedia";
-            this.trbScrollMedia.Size = new System.Drawing.Size(792, 42);
+            this.trbScrollMedia.Size = new System.Drawing.Size(404, 42);
             this.trbScrollMedia.TabIndex = 0;
             this.trbScrollMedia.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trbScrollMedia.Scroll += new System.EventHandler(this.trbScrollMedia_Scroll);
@@ -177,7 +184,7 @@
             // vSBMedia
             // 
             this.vSBMedia.LargeChange = 1;
-            this.vSBMedia.Location = new System.Drawing.Point(772, 52);
+            this.vSBMedia.Location = new System.Drawing.Point(403, 52);
             this.vSBMedia.Maximum = 0;
             this.vSBMedia.Name = "vSBMedia";
             this.vSBMedia.Size = new System.Drawing.Size(20, 385);
@@ -187,10 +194,10 @@
             // hSBMedia
             // 
             this.hSBMedia.LargeChange = 1;
-            this.hSBMedia.Location = new System.Drawing.Point(0, 437);
+            this.hSBMedia.Location = new System.Drawing.Point(-3, 435);
             this.hSBMedia.Maximum = 0;
             this.hSBMedia.Name = "hSBMedia";
-            this.hSBMedia.Size = new System.Drawing.Size(772, 20);
+            this.hSBMedia.Size = new System.Drawing.Size(407, 20);
             this.hSBMedia.TabIndex = 4;
             this.hSBMedia.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hSBMedia_Scroll);
             // 
@@ -199,17 +206,19 @@
             this.tmrMedia.Interval = 1000;
             this.tmrMedia.Tick += new System.EventHandler(this.tmrMedia_Tick);
             // 
-            // tsLabelMediaTime1
+            // panel1
             // 
-            this.tsLabelMediaTime1.Name = "tsLabelMediaTime1";
-            this.tsLabelMediaTime1.Size = new System.Drawing.Size(10, 22);
-            this.tsLabelMediaTime1.Text = " ";
+            this.panel1.Location = new System.Drawing.Point(426, 52);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(400, 380);
+            this.panel1.TabIndex = 5;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 573);
+            this.ClientSize = new System.Drawing.Size(919, 573);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.hSBMedia);
             this.Controls.Add(this.vSBMedia);
             this.Controls.Add(this.trbScrollMedia);
@@ -244,12 +253,13 @@
         private System.Windows.Forms.ToolStripButton tsButtonOpen;
         private System.Windows.Forms.ToolStripLabel tsLabelMediaTime;
         private System.Windows.Forms.Panel pnlMedia;
-        private System.Windows.Forms.TrackBar trbScrollMedia;
         private System.Windows.Forms.TrackBar trbZoomMedia;
         private System.Windows.Forms.VScrollBar vSBMedia;
         private System.Windows.Forms.HScrollBar hSBMedia;
         private System.Windows.Forms.Timer tmrMedia;
         private System.Windows.Forms.ToolStripLabel tsLabelMediaTime1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TrackBar trbScrollMedia;
     }
 }
 

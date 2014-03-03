@@ -7,6 +7,7 @@ using System.Windows.Forms.VisualStyles;
 using DirectShow;
 using DirectShowLib;
 
+
 namespace DirectShow
 {
     class Media
@@ -107,6 +108,7 @@ namespace DirectShow
             }
             if (CurrentStatus == mStatus.Stop)
             {
+                MediaStop();
                 allSeconds = (int) mediaTimeSeconds;
                 timer.Stop();
             }
